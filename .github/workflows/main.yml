@@ -1,0 +1,34 @@
+name: Deploy Game to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]  # Chạy khi bạn push code lên branch main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Build with Pygbag
+        run: |
+          # Chạy pygbag để tạo thư mục build/web
+          # --no_browser giúp script không cố mở trình duyệt trên server
+          python -m pygbag --build --no_browser main.py
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: build/web # Thư mục chứa file đã build
+          branch: gh-pages # Game sẽ được đẩy lên nhánh này để hiển thị web
