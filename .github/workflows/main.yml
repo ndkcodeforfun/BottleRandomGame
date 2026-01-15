@@ -25,7 +25,7 @@ jobs:
         run: |
           # Chạy pygbag để tạo thư mục build/web
           # --no_browser giúp script không cố mở trình duyệt trên server
-          python -m pygbag --build --no_browser main.py
+          python -m pygbag --build main.py
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
