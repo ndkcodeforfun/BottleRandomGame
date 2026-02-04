@@ -2,7 +2,7 @@
 # Các thư viện cần thiết để chạy trò chơi
 
 pygame>=2.5.0
-pygbag>=1.0.0
+pygbag>=0.9.2
 
 # Optional dependencies for enhanced features
 # Các thư viện tùy chọn để tăng cường tính năng
