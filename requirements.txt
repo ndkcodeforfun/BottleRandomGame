@@ -1,2 +1,9 @@
-pygame
-pygbag
+# Enhanced Water Sort Game - Dependencies
+# Các thư viện cần thiết để chạy trò chơi
+
+pygame>=2.5.0
+pygbag>=1.0.0
+
+# Optional dependencies for enhanced features
+# Các thư viện tùy chọn để tăng cường tính năng
+numpy>=1.24.0  # For advanced particle effects
